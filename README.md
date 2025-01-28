@@ -2,7 +2,7 @@
 
 ## Overview
 
-The **StatementProcessor** is a microservice that processes `MT940-format` customer statements files(CSV/XML), validates the data, and sends events for further processing based on the `MT940` format. The service checks for:
+The **StatementProcessor** is a microservice that processes `MT940-format` customer statements files (`CSV/XML`), validates the data, and sends events for further processing based on the `MT940` format. The service checks for:
 - Uniqueness of transaction references.
 - Validates the end balance of the statements.
   Using MT940 format `End Balance` is calculated as `Start Balance` add(+) `Mutation`.
