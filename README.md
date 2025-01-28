@@ -17,7 +17,7 @@ If any records fail validation, the application generates a report that includes
 - **Jackson** for handling CSV and XML formats.
 - **JUnit 5**, **Mockito**, and **AssertJ** for unit testing.
 - **Swagger** for API documentation.
-- **Logback** for logging with color configuration.
+- **Logback** a reliable and flexible logging system for capturing and managing logs, which is essential for debugging, monitoring, and auditing applications.
 - **Spring Events** to handle statement-related events.
 
 ### Requirements:
@@ -41,9 +41,9 @@ Once you've cloned the repository, you can build the application with:
 ```bash
 ./mvnw clean install
 ```
-To run the test use:
+To build without running test use
 ```bash
-./mvnw test
+./mvnw clean install -Dmaven.test.skip=true
 ```
 
 To run the application use:
@@ -139,7 +139,7 @@ The Dockerfile and the `.dockerignore` file are configured to package and run th
 
 ## CI/CD Setup
 
-The GitLab CI file is prepared for continuous integration and deployment but is not fully 
+The GitLab CI file `.gitlab-ci,yml` is prepared for continuous integration and deployment but is not fully 
 configured due to lack of personal environments.
 
 ## Kubernetes Deployment
