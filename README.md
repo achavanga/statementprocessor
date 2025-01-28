@@ -148,7 +148,7 @@ The application is partially configured for Kubernetes `/k8s` folder.
 ### Kubernetes YAML file:
 - **Deployment YAML** - Defines how the application will be deployed in Kubernetes.
 - **Service YAML** - Exposes the application as a service within the Kubernetes cluster.
-- **HorizontalPodAutoscaler** - Can be added to scale the application based on load.
+- **HorizontalPodAutoscaler** - Can be added to scale the application based on a load.
 
 ## Monitoring and Tracing
 
