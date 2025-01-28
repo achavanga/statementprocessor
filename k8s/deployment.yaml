@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: statementprocessor-deployment
+  labels:
+    app: statementprocessor
+spec:
+  replicas: 2  # Scale the number of pods as per your needs
+  selector:
+    matchLabels:
+      app: statementprocessor
+  template:
+    metadata:
+      labels:
+        app: statementprocessor
+    spec:
+      containers:
+        - name: statementprocessor
+          image: statementprocessor:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: "dev"  # Environment profile, use 'prod' or 'dev' depending on your use case
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "500m"
+            limits:
+              memory: "512Mi"
+              cpu: "1000m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: statementprocessor-service
+spec:
+  selector:
+    app: statementprocessor
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: ClusterIP
+
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: statementprocessor-hpa
+  namespace: default  # Specify the namespace, if different
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: statementprocessor  # Name of the Deployment you're scaling
+  minReplicas: 2            # Minimum number of replicas
+  maxReplicas: 5            # Maximum number of replicas
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 80  # Target CPU utilization percentage

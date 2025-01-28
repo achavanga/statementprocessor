@@ -1,0 +1,30 @@
+stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  DOCKER_REGISTRY: #TODO my github registry
+  IMAGE_NAME: statementprocessor
+  IMAGE_TAG: latest
+
+before_script:
+  - export DOCKER_BUILDKIT=1
+  - export DOCKER_CLI_EXPERIMENTAL=enabled
+
+build:
+  stage: build
+  script:
+    - docker build -t $DOCKER_REGISTRY/$IMAGE_NAME:$IMAGE_TAG .
+    - docker push $DOCKER_REGISTRY/$IMAGE_NAME:$IMAGE_TAG
+
+test:
+  stage: test
+  script:
+    - mvn test
+
+deploy:
+  stage: deploy
+  script:
+    - kubectl apply -f k8s/deployment.yaml
+    - kubectl apply -f k8s/service.yaml
