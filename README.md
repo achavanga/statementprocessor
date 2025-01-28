@@ -167,4 +167,6 @@ The application is partially configured for Kubernetes `/k8s` folder.
 
 ## Conclusion
 
-This microservice provides a basic framework for statement processing, including transaction reference validation, balance validation, and generating reports for failed records. It is packaged with Docker for easy deployment and has several features for further enhancement.
+This microservice provides a basic framework for statement processing, including transaction 
+reference validation, balance validation, and generating reports for failed records as JSON response "this can be improved to generate a PDF report". 
+It is packaged with Docker for easy deployment and has several features for further enhancement.
