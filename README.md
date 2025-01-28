@@ -81,6 +81,14 @@ You can access the Swagger UI to interact with the API at:
 http://localhost:8080/
 ```
 
+To check application health and info use:
+```bash
+http://localhost:8080/actuator
+
+http://localhost:8080/actuator/health
+
+http://localhost:8080/actuator/info
+```
 Alternatively, you can use tools like **Postman** to test the API endpoints.
 
 ## Features Implemented
@@ -90,6 +98,8 @@ Alternatively, you can use tools like **Postman** to test the API endpoints.
 - **Database Support:** Flyway for migrations and H2 for local testing.
 - **Logging:** Logback is configured for colored logs.
 - **Testing:** JUnit, Mockito, and AssertJ are used for unit testing.
+- **Actuator** Exposes operational information about the running application — health, metrics, info, dump, env, etc
+
 
 ## Features Not Yet Implemented
 
@@ -155,7 +165,7 @@ The application is partially configured for Kubernetes `/k8s` folder.
 - **HorizontalPodAutoscaler** - Can be added to scale the application based on a load.
 
 ## Monitoring and Tracing
-
+- 
 - **Prometheus** and **Grafana** dashboards are planned but not implemented yet.
 - **Distributed tracing with Spring Cloud Sleuth and Jaeger** is also planned for future implementation.
 
