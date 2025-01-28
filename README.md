@@ -1,12 +1,16 @@
-# StatementProcessor
+# Statement Processor
 
 ## Overview
 
-The **StatementProcessor** is a microservice that processes customer statements, validates the data, and sends events for further processing. The service checks for:
+The **StatementProcessor** is a microservice that processes `MT940-format` customer statements files(CSV/XML), validates the data, and sends events for further processing based on the `MT940` format. The service checks for:
 - Uniqueness of transaction references.
 - Validates the end balance of the statements.
+  Using MT940 format `End Balance` is calculated as `Start Balance` add(+) `Mutation`.
+If any records fail validation,
+  the application generates a report that includes the transaction references and descriptions of the failed records.
 
-If any records fail validation, the application generates a report that includes the transaction references and descriptions of the failed records.
+### MT940
+The MT940 format is a standardized format used for electronic banking to exchange financial transaction details, specifically customer statement messages. It is part of the SWIFT (Society for Worldwide Interbank Financial Telecommunication) message types, commonly used by banks and financial institutions for transmitting account statements in a machine-readable format.
 
 ### Features:
 - **Java 21** and **Spring Boot 3.3.x** for the backend services.
