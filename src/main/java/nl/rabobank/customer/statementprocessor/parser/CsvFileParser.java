@@ -51,8 +51,8 @@ public final class CsvFileParser implements FileParser {
         log.info("Start parsing the CSV file: {}", file.getOriginalFilename());
 
         try {
-            CsvSchema schema = createCsvSchema();
-            List<StatementCsv> statementCsvList = parseCsvFile(file, schema);
+            var schema = createCsvSchema();
+            var statementCsvList = parseCsvFile(file, schema);
             log.info("Successfully parsed CSV file: {}", file.getOriginalFilename());
 
             return csvToStatementMapper.fromCsvToStatementList(statementCsvList);

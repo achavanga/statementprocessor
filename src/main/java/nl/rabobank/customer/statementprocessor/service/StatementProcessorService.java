@@ -74,8 +74,8 @@ public class StatementProcessorService {
         // Determine the file type and parse accordingly
         FileParser fileParser = getFileParser(filename);
 
-        List<CustomerStatement> customerStatements = fileParser.parseFile(file);
-        List<ValidationResult> validationErrors = validator.validateParsedStatements(customerStatements);
+        var customerStatements = fileParser.parseFile(file);
+        var validationErrors = validator.validateParsedStatements(customerStatements);
 
         saveStatements(customerStatements, validationErrors);
 
@@ -91,7 +91,7 @@ public class StatementProcessorService {
      * @throws InvalidFileException if the file name is missing.
      */
     private String getFileName(MultipartFile file) throws InvalidFileException {
-        String filename = file.getOriginalFilename();
+        var filename = file.getOriginalFilename();
         if (filename == null) {
             throw new InvalidFileException("File name is missing from the file");
         }

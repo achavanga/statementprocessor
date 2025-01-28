@@ -49,7 +49,7 @@ public final class XmlFileParser implements FileParser {
         log.info("XML file processing started for file: {}", file.getOriginalFilename());
         try {
             // Deserialize XML data into StatementXmlList
-            StatementXmlList statementXmlList = xmlMapper.readValue(file.getInputStream(), StatementXmlList.class);
+            var statementXmlList = xmlMapper.readValue(file.getInputStream(), StatementXmlList.class);
 
             // Map XML records to customer statements
             return xmlToStatementMapper.fromXmlToStatementList(statementXmlList.records());
