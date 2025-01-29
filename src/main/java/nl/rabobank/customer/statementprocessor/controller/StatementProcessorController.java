@@ -62,8 +62,8 @@ public class StatementProcessorController {
                                     {"error": File processing failed,"details": Unexpected error occurred during file processing. Please try again later.
                                     }"""))),
     })
-    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = {"multipart/form-data"})
-    public ResponseEntity<Report> uploadStatementFile(@RequestParam("file") MultipartFile file) {
+    @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Report> processStatementUpload(@RequestParam("file") MultipartFile file) {
         var report = processorService.process(file);
         return ResponseEntity.ok(report);
     }
