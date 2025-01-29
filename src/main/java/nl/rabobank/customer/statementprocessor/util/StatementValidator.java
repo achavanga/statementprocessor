@@ -66,7 +66,7 @@ public class StatementValidator {
     private String createErrorMessage(boolean isDuplicate, boolean isEndBalanceValid) {
         StringBuilder errorMessage = new StringBuilder();
 
-        // Append relevant error message for duplicate or invalid balance
+        // Append a relevant error message for duplicate or invalid balance
         if (isDuplicate) {
             errorMessage.append(DUPLICATE_REFERENCE_DETECTED);
         }

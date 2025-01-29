@@ -67,7 +67,7 @@ public class StatementProcessorService {
      * @throws InvalidFileException if the file type is unsupported or if the file name is missing.
      */
     public Report process(MultipartFile file) throws InvalidFileException {
-        String filename = getFileName(file);
+        var filename = getFileName(file);
 
         log.info("Start processing file {}", filename);
 
