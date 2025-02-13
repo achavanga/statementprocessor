@@ -1,6 +1,8 @@
-package nl.rabobank.customer.statementprocessor.control.exception;
+package nl.rabobank.customer.statementprocessor.boundary.handler;
 
 import nl.rabobank.customer.statementprocessor.boundary.dto.response.ErrorResponse;
+import nl.rabobank.customer.statementprocessor.control.exception.FileParsingException;
+import nl.rabobank.customer.statementprocessor.control.exception.InvalidFileException;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
