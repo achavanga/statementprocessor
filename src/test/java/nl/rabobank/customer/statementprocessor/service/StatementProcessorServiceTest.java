@@ -1,14 +1,15 @@
 package nl.rabobank.customer.statementprocessor.service;
 
-import nl.rabobank.customer.statementprocessor.dto.CustomerStatement;
-import nl.rabobank.customer.statementprocessor.dto.Report;
-import nl.rabobank.customer.statementprocessor.dto.ValidationResult;
-import nl.rabobank.customer.statementprocessor.events.StatementsEventPublisher;
-import nl.rabobank.customer.statementprocessor.exception.InvalidFileException;
-import nl.rabobank.customer.statementprocessor.mapper.CustomerStatementToStatementMapper;
-import nl.rabobank.customer.statementprocessor.mapper.ReportMapper;
-import nl.rabobank.customer.statementprocessor.parser.CsvFileParser;
-import nl.rabobank.customer.statementprocessor.parser.XmlFileParser;
+import nl.rabobank.customer.statementprocessor.control.service.StatementProcessorService;
+import nl.rabobank.customer.statementprocessor.boundary.dto.CustomerStatement;
+import nl.rabobank.customer.statementprocessor.boundary.dto.Report;
+import nl.rabobank.customer.statementprocessor.boundary.dto.ValidationResult;
+import nl.rabobank.customer.statementprocessor.control.events.StatementsEventPublisher;
+import nl.rabobank.customer.statementprocessor.control.exception.InvalidFileException;
+import nl.rabobank.customer.statementprocessor.control.mapper.CustomerStatementToStatementMapper;
+import nl.rabobank.customer.statementprocessor.control.mapper.ReportMapper;
+import nl.rabobank.customer.statementprocessor.control.parser.CsvFileParser;
+import nl.rabobank.customer.statementprocessor.control.parser.XmlFileParser;
 import nl.rabobank.customer.statementprocessor.util.StatementValidator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

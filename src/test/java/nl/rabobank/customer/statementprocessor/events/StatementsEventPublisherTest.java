@@ -1,6 +1,8 @@
 package nl.rabobank.customer.statementprocessor.events;
 
-import nl.rabobank.customer.statementprocessor.model.Statement;
+import nl.rabobank.customer.statementprocessor.control.events.StatementEvent;
+import nl.rabobank.customer.statementprocessor.control.events.StatementsEventPublisher;
+import nl.rabobank.customer.statementprocessor.entity.model.Statement;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

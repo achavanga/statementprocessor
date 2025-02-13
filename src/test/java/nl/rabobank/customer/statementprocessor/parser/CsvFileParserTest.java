@@ -1,9 +1,10 @@
 package nl.rabobank.customer.statementprocessor.parser;
 
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
-import nl.rabobank.customer.statementprocessor.dto.CustomerStatement;
-import nl.rabobank.customer.statementprocessor.exception.FileParsingException;
-import nl.rabobank.customer.statementprocessor.mapper.CsvToStatementMapper;
+import nl.rabobank.customer.statementprocessor.boundary.dto.CustomerStatement;
+import nl.rabobank.customer.statementprocessor.control.exception.FileParsingException;
+import nl.rabobank.customer.statementprocessor.control.parser.CsvFileParser;
+import nl.rabobank.customer.statementprocessor.control.mapper.CsvToStatementMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

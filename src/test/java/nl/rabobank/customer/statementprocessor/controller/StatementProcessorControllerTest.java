@@ -1,8 +1,9 @@
 package nl.rabobank.customer.statementprocessor.controller;
 
-import nl.rabobank.customer.statementprocessor.dto.Report;
-import nl.rabobank.customer.statementprocessor.exception.InvalidFileException;
-import nl.rabobank.customer.statementprocessor.service.StatementProcessorService;
+import nl.rabobank.customer.statementprocessor.boundary.controller.StatementProcessorController;
+import nl.rabobank.customer.statementprocessor.boundary.dto.Report;
+import nl.rabobank.customer.statementprocessor.control.exception.InvalidFileException;
+import nl.rabobank.customer.statementprocessor.control.service.StatementProcessorService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;

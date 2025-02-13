@@ -1,7 +1,7 @@
 package nl.rabobank.customer.statementprocessor.util;
 
-import nl.rabobank.customer.statementprocessor.dto.CustomerStatement;
-import nl.rabobank.customer.statementprocessor.dto.ValidationResult;
+import nl.rabobank.customer.statementprocessor.boundary.dto.CustomerStatement;
+import nl.rabobank.customer.statementprocessor.boundary.dto.ValidationResult;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

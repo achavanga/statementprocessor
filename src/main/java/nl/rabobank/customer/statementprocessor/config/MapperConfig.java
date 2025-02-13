@@ -3,7 +3,7 @@ package nl.rabobank.customer.statementprocessor.config;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import nl.rabobank.customer.statementprocessor.mapper.CustomerStatementToStatementMapper;
+import nl.rabobank.customer.statementprocessor.control.mapper.CustomerStatementToStatementMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
